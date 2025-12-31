@@ -1,0 +1,210 @@
+/**
+ * Newsletter Signup Styles
+ */
+
+/* Newsletter Container */
+.newsletter {
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-bg-highlight) 0%, #1f2937 100%);
+    border-radius: var(--radius-xl);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.newsletter__icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto var(--space-m);
+    color: var(--color-accent-new);
+}
+
+.newsletter__title {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+}
+
+.newsletter__description {
+    font-size: var(--fs-s);
+    color: rgba(255,255,255,0.8);
+    max-width: 500px;
+    margin: 0 auto var(--space-l);
+}
+
+/* Newsletter Form */
+.newsletter__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .newsletter__form {
+        flex-direction: row;
+    }
+}
+
+.newsletter__input {
+    flex: 1;
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-s);
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 2px solid transparent;
+    border-radius: var(--radius-m);
+    transition: border-color var(--transition-fast);
+}
+
+.newsletter__input:focus {
+    outline: none;
+    border-color: var(--color-accent-new);
+}
+
+.newsletter__input::placeholder {
+    color: var(--color-text-sec);
+}
+
+.newsletter__submit {
+    padding: var(--space-s) var(--space-l);
+    font-size: var(--fs-s);
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-accent-new);
+    border: none;
+    border-radius: var(--radius-m);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.newsletter__submit:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.newsletter__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Privacy Note */
+.newsletter__privacy {
+    font-size: var(--fs-xs);
+    color: rgba(255,255,255,0.6);
+    margin-top: var(--space-s);
+}
+
+.newsletter__privacy a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: underline;
+}
+
+/* Success State */
+.newsletter__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    padding: var(--space-l);
+}
+
+.newsletter__success-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--color-subtle-green);
+}
+
+.newsletter__success-title {
+    font-size: var(--fs-l);
+    font-weight: 600;
+}
+
+.newsletter__success-text {
+    font-size: var(--fs-s);
+    color: rgba(255,255,255,0.8);
+}
+
+/* Inline Newsletter */
+.newsletter--inline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding: var(--space-l);
+    background: var(--color-bodified);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-l);
+    color: var(--color-text);
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .newsletter--inline {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.newsletter--inline .newsletter__content {
+    flex: 1;
+}
+
+.newsletter--inline .newsletter__title {
+    font-size: var(--fs-l);
+    margin-bottom: var(--space-xs);
+}
+
+.newsletter--inline .newsletter__description {
+    font-size: var(--fs-s);
+    color: var(--color-text-sec);
+    margin-bottom: 0;
+    max-width: none;
+}
+
+.newsletter--inline .newsletter__form {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.newsletter--inline .newsletter__submit {
+    background: var(--color-action);
+    color: var(--color-white);
+}
+
+.newsletter--inline .newsletter__submit:hover {
+    background: var(--color-button-sec);
+}
+
+/* Minimal Newsletter (Footer) */
+.newsletter--minimal {
+    padding: 0;
+    background: transparent;
+    text-align: left;
+    color: var(--color-text);
+}
+
+.newsletter--minimal .newsletter__title {
+    font-size: var(--fs-base);
+    margin-bottom: var(--space-s);
+}
+
+.newsletter--minimal .newsletter__form {
+    max-width: 100%;
+}
+
+.newsletter--minimal .newsletter__input {
+    padding: var(--space-xs) var(--space-s);
+}
+
+.newsletter--minimal .newsletter__submit {
+    padding: var(--space-xs) var(--space-m);
+    background: var(--color-text);
+    color: var(--color-white);
+}
+
+/* Dark section newsletter */
+[data-theme="dark"] .newsletter--inline {
+    background: var(--color-offwhite);
+}

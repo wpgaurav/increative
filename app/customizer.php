@@ -213,6 +213,128 @@ add_action('customize_register', function ($wp_customize) {
         'section' => 'increative_blog',
         'type' => 'checkbox',
     ]);
+
+    // ============================================
+    // Single Post Section
+    // ============================================
+    $wp_customize->add_section('increative_single', [
+        'title' => __('Single Post', 'sage'),
+        'panel' => 'increative_panel',
+        'priority' => 55,
+    ]);
+
+    // Show Table of Contents
+    $wp_customize->add_setting('increative_show_toc', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_show_toc', [
+        'label' => __('Show Table of Contents', 'sage'),
+        'description' => __('Auto-generated from post headings', 'sage'),
+        'section' => 'increative_single',
+        'type' => 'checkbox',
+    ]);
+
+    // TOC Minimum Headings
+    $wp_customize->add_setting('increative_toc_min_headings', [
+        'default' => '3',
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control('increative_toc_min_headings', [
+        'label' => __('Minimum Headings for TOC', 'sage'),
+        'section' => 'increative_single',
+        'type' => 'number',
+        'input_attrs' => [
+            'min' => 2,
+            'max' => 10,
+        ],
+    ]);
+
+    // Show Share Buttons
+    $wp_customize->add_setting('increative_show_share', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_show_share', [
+        'label' => __('Show Social Share Buttons', 'sage'),
+        'section' => 'increative_single',
+        'type' => 'checkbox',
+    ]);
+
+    // Show Reading Progress Bar
+    $wp_customize->add_setting('increative_show_progress', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_show_progress', [
+        'label' => __('Show Reading Progress Bar', 'sage'),
+        'section' => 'increative_single',
+        'type' => 'checkbox',
+    ]);
+
+    // Show Breadcrumbs
+    $wp_customize->add_setting('increative_show_breadcrumbs', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_show_breadcrumbs', [
+        'label' => __('Show Breadcrumbs', 'sage'),
+        'section' => 'increative_single',
+        'type' => 'checkbox',
+    ]);
+
+    // ============================================
+    // Performance Section
+    // ============================================
+    $wp_customize->add_section('increative_performance', [
+        'title' => __('Performance', 'sage'),
+        'panel' => 'increative_panel',
+        'priority' => 100,
+    ]);
+
+    // Lazy Load Images
+    $wp_customize->add_setting('increative_lazy_load', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_lazy_load', [
+        'label' => __('Enable Lazy Loading', 'sage'),
+        'description' => __('Defer loading of images until they enter the viewport', 'sage'),
+        'section' => 'increative_performance',
+        'type' => 'checkbox',
+    ]);
+
+    // Disable Emoji Scripts
+    $wp_customize->add_setting('increative_disable_emoji', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_disable_emoji', [
+        'label' => __('Remove Emoji Scripts', 'sage'),
+        'description' => __('Removes WordPress emoji scripts for faster loading', 'sage'),
+        'section' => 'increative_performance',
+        'type' => 'checkbox',
+    ]);
+
+    // Inline Critical CSS
+    $wp_customize->add_setting('increative_inline_critical', [
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+
+    $wp_customize->add_control('increative_inline_critical', [
+        'label' => __('Inline Critical CSS', 'sage'),
+        'description' => __('Includes above-the-fold CSS in the page for faster rendering', 'sage'),
+        'section' => 'increative_performance',
+        'type' => 'checkbox',
+    ]);
 });
 
 /**
@@ -220,12 +342,12 @@ add_action('customize_register', function ($wp_customize) {
  */
 add_action('wp_enqueue_scripts', function () {
     $custom_font = get_theme_mod('increative_custom_font', '');
-    
+
     if (!empty($custom_font)) {
         $font_weights = get_theme_mod('increative_font_weight', '400;500;600;700');
         $font_name = str_replace(' ', '+', $custom_font);
         $font_url = "https://fonts.googleapis.com/css2?family={$font_name}:wght@{$font_weights}&display=swap";
-        
+
         wp_enqueue_style('increative-google-font', $font_url, [], null);
     }
 });
@@ -235,7 +357,7 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_action('wp_head', function () {
     $custom_font = get_theme_mod('increative_custom_font', '');
-    
+
     if (!empty($custom_font)) {
         echo "<style>:root { --font-sans: '{$custom_font}', ui-sans-serif, system-ui, sans-serif; }</style>\n";
     }

@@ -1,0 +1,243 @@
+/**
+ * Table of Contents Styles
+ * Auto-generated from post headings
+ */
+
+/* Main TOC Container */
+.toc {
+    background: var(--color-bodified);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-l);
+    padding: var(--space-m);
+    margin-bottom: var(--space-l);
+}
+
+.toc__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-s);
+}
+
+.toc__title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--fs-s);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.toc__title svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-action);
+}
+
+.toc__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    color: var(--color-text-sec);
+    transition: all var(--transition-fast);
+}
+
+.toc__toggle:hover {
+    background: var(--color-offwhite);
+    color: var(--color-text);
+}
+
+.toc__toggle svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform var(--transition-fast);
+}
+
+.toc.is-collapsed .toc__toggle svg {
+    transform: rotate(180deg);
+}
+
+/* TOC List */
+.toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.toc.is-collapsed .toc__list {
+    display: none;
+}
+
+.toc__item {
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-bordered);
+}
+
+.toc__item:last-child {
+    border-bottom: none;
+}
+
+/* Nested Levels */
+.toc__item--h3 { padding-left: var(--space-m); }
+.toc__item--h4 { padding-left: calc(var(--space-m) * 2); }
+.toc__item--h5 { padding-left: calc(var(--space-m) * 3); }
+
+.toc__link {
+    display: block;
+    font-size: var(--fs-s);
+    color: var(--color-text-sec);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color var(--transition-fast);
+}
+
+.toc__link:hover {
+    color: var(--color-action);
+}
+
+.toc__link.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Progress Indicator */
+.toc__progress {
+    height: 3px;
+    background: var(--color-bordered);
+    border-radius: var(--radius-full);
+    margin-top: var(--space-s);
+    overflow: hidden;
+}
+
+.toc__progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-action), var(--color-primary));
+    width: 0%;
+    transition: width 0.1s;
+}
+
+/* Sticky Sidebar TOC */
+.toc--sticky {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-m));
+    max-height: calc(100vh - var(--header-height) - var(--space-xl));
+}
+
+.toc--sticky .toc__list {
+    max-height: calc(100vh - var(--header-height) - 200px);
+}
+
+/* Compact TOC */
+.toc--compact {
+    padding: var(--space-s);
+}
+
+.toc--compact .toc__title {
+    font-size: var(--fs-xs);
+}
+
+.toc--compact .toc__link {
+    font-size: var(--fs-xs);
+    padding: var(--space-xs) 0;
+}
+
+/* Floating TOC Button (Mobile) */
+.toc-fab {
+    position: fixed;
+    bottom: var(--space-l);
+    right: var(--space-m);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-action);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--smallshadow);
+    transition: all var(--transition-duration);
+}
+
+@media (min-width: 1024px) {
+    .toc-fab { display: none; }
+}
+
+.toc-fab:hover {
+    background: var(--color-button-sec);
+    transform: scale(1.1);
+}
+
+.toc-fab svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* TOC Modal (Mobile) */
+.toc-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-duration);
+}
+
+.toc-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toc-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.toc-modal__content {
+    position: relative;
+    width: 100%;
+    max-height: 80vh;
+    background: var(--color-white);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: var(--space-l);
+    transform: translateY(100%);
+    transition: transform var(--transition-duration);
+}
+
+.toc-modal.is-open .toc-modal__content {
+    transform: translateY(0);
+}
+
+.toc-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-m);
+    padding-bottom: var(--space-s);
+    border-bottom: 1px solid var(--color-bordered);
+}
+
+.toc-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-offwhite);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}

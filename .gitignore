@@ -1,7 +1,29 @@
+# Dependencies (development only)
 /node_modules
-/vendor
-/public/*
-!/public/.gitkeep
+
+# Build artifacts tracked separately or generated on deploy
+# Uncomment if you want to commit built assets:
+# /public/build
+
+# Environment
 .env
+.env.*
+!.env.example
+
+# Debug logs
 npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.idea
+.vscode
+
+# Hot file (Vite dev server)
+/public/hot

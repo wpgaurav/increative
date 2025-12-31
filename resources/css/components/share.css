@@ -1,0 +1,183 @@
+/**
+ * Social Share Buttons
+ * Inline, floating, and native share variants
+ */
+
+/* Base Share Container */
+.share {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.share__label {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--color-text-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.share__buttons {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+/* Share Button */
+.share__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-s);
+    background: var(--color-white);
+    color: var(--color-text-sec);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.share__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--smallshadow);
+}
+
+.share__btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Platform Colors */
+.share__btn--twitter:hover { background: #1DA1F2; border-color: #1DA1F2; color: #fff; }
+.share__btn--facebook:hover { background: #1877F2; border-color: #1877F2; color: #fff; }
+.share__btn--linkedin:hover { background: #0A66C2; border-color: #0A66C2; color: #fff; }
+.share__btn--whatsapp:hover { background: #25D366; border-color: #25D366; color: #fff; }
+.share__btn--telegram:hover { background: #0088cc; border-color: #0088cc; color: #fff; }
+.share__btn--reddit:hover { background: #FF4500; border-color: #FF4500; color: #fff; }
+.share__btn--email:hover { background: var(--color-text); border-color: var(--color-text); color: #fff; }
+.share__btn--copy:hover { background: var(--color-action); border-color: var(--color-action); color: #fff; }
+
+/* Copy Success State */
+.share__btn--copy.is-copied {
+    background: var(--color-subtle-green);
+    border-color: var(--color-subtle-green);
+    color: #fff;
+}
+
+/* Floating Share Bar */
+.share--floating {
+    position: fixed;
+    left: var(--space-m);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    flex-direction: column;
+    gap: var(--space-xs);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-duration);
+}
+
+.share--floating.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1200px) {
+    .share--floating { display: none; }
+}
+
+.share--floating .share__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Bottom Share Bar (Mobile) */
+.share--bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    justify-content: center;
+    padding: var(--space-s);
+    background: var(--color-white);
+    border-top: 1px solid var(--color-bordered);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    transform: translateY(100%);
+    transition: transform var(--transition-duration);
+}
+
+.share--bottom.is-visible {
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .share--bottom { display: none; }
+}
+
+/* Inline Share (After Content) */
+.share--inline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-m);
+    background: var(--color-bodified);
+    border-radius: var(--radius-l);
+    margin-top: var(--space-l);
+}
+
+.share--inline .share__label {
+    margin-bottom: var(--space-s);
+}
+
+/* Compact Share */
+.share--compact .share__btn {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.share--compact .share__btn svg {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+/* Native Share Button */
+.share__native {
+    display: none;
+}
+
+@supports (navigator: share) {
+    .share__native {
+        display: inline-flex;
+    }
+}
+
+/* Share Count Badge */
+.share__count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 4px;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .share__btn {
+    background: var(--color-offwhite);
+}
+
+[data-theme="dark"] .share--bottom,
+[data-theme="dark"] .share--inline {
+    background: var(--color-offwhite);
+}

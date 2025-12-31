@@ -1,0 +1,103 @@
+{
+  "editor.deps.json": {
+    "file": "assets/editor.deps-DxpY22xl.json",
+    "src": "editor.deps.json"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-B3kEJLxB.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/components/archive.css": {
+    "file": "assets/archive-D1Fg-r4a.css",
+    "src": "resources/css/components/archive.css",
+    "isEntry": true
+  },
+  "resources/css/components/author-box.css": {
+    "file": "assets/author-box-CHsHlDzu.css",
+    "src": "resources/css/components/author-box.css",
+    "isEntry": true
+  },
+  "resources/css/components/breadcrumbs.css": {
+    "file": "assets/breadcrumbs-Cqtz0sed.css",
+    "src": "resources/css/components/breadcrumbs.css",
+    "isEntry": true
+  },
+  "resources/css/components/comments.css": {
+    "file": "assets/comments-CicQa01q.css",
+    "src": "resources/css/components/comments.css",
+    "isEntry": true
+  },
+  "resources/css/components/cta.css": {
+    "file": "assets/cta-0gAeWx6k.css",
+    "src": "resources/css/components/cta.css",
+    "isEntry": true
+  },
+  "resources/css/components/forms.css": {
+    "file": "assets/forms-BK2pzZPI.css",
+    "src": "resources/css/components/forms.css",
+    "isEntry": true
+  },
+  "resources/css/components/hero.css": {
+    "file": "assets/hero-DXfCPBuv.css",
+    "src": "resources/css/components/hero.css",
+    "isEntry": true
+  },
+  "resources/css/components/mega-menu.css": {
+    "file": "assets/mega-menu-BxbBZjl0.css",
+    "src": "resources/css/components/mega-menu.css",
+    "isEntry": true
+  },
+  "resources/css/components/newsletter.css": {
+    "file": "assets/newsletter-aRRcPL2T.css",
+    "src": "resources/css/components/newsletter.css",
+    "isEntry": true
+  },
+  "resources/css/components/pagination.css": {
+    "file": "assets/pagination-YWPtmDHn.css",
+    "src": "resources/css/components/pagination.css",
+    "isEntry": true
+  },
+  "resources/css/components/reading-progress.css": {
+    "file": "assets/reading-progress-DYj3QxxS.css",
+    "src": "resources/css/components/reading-progress.css",
+    "isEntry": true
+  },
+  "resources/css/components/share.css": {
+    "file": "assets/share-BY_VunG5.css",
+    "src": "resources/css/components/share.css",
+    "isEntry": true
+  },
+  "resources/css/components/single.css": {
+    "file": "assets/single-NAP8kb9c.css",
+    "src": "resources/css/components/single.css",
+    "isEntry": true
+  },
+  "resources/css/components/toc.css": {
+    "file": "assets/toc-CjxU4qL_.css",
+    "src": "resources/css/components/toc.css",
+    "isEntry": true
+  },
+  "resources/css/critical.css": {
+    "file": "assets/critical-D68RgGUZ.css",
+    "src": "resources/css/critical.css",
+    "isEntry": true
+  },
+  "resources/css/editor.css": {
+    "file": "assets/editor-DvCxP9vU.css",
+    "src": "resources/css/editor.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BBal-sUx.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-CfU4GbSP.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true
+  }
+}

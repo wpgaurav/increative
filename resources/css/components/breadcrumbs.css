@@ -1,0 +1,91 @@
+/**
+ * Breadcrumbs Styles
+ * SEO-optimized with schema.org support
+ */
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-s) 0;
+    font-size: var(--fs-xs);
+    color: var(--color-text-sec);
+}
+
+/* Breadcrumb Item */
+.breadcrumbs__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+/* Home Icon */
+.breadcrumbs__home {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-sec);
+}
+
+.breadcrumbs__home svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Links */
+.breadcrumbs__link {
+    color: var(--color-text-sec);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs__link:hover {
+    color: var(--color-action);
+}
+
+/* Separator */
+.breadcrumbs__sep {
+    color: var(--color-bordered);
+    user-select: none;
+}
+
+/* Current Page */
+.breadcrumbs__current {
+    color: var(--color-text);
+    font-weight: 500;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Breadcrumbs with Background */
+.breadcrumbs--filled {
+    background: var(--color-bodified);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-s);
+    margin-bottom: var(--space-m);
+}
+
+/* Breadcrumbs in Hero */
+.breadcrumbs--hero {
+    margin-bottom: var(--space-s);
+}
+
+.breadcrumbs--hero .breadcrumbs__link,
+.breadcrumbs--hero .breadcrumbs__current {
+    color: rgba(255,255,255,0.8);
+}
+
+.breadcrumbs--hero .breadcrumbs__link:hover {
+    color: var(--color-white);
+}
+
+.breadcrumbs--hero .breadcrumbs__sep {
+    color: rgba(255,255,255,0.4);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .breadcrumbs--filled {
+    background: var(--color-offwhite);
+}

@@ -1,0 +1,170 @@
+/**
+ * CRITICAL CSS
+ * 
+ * Inlined in <head> for instant first paint.
+ * Contains ONLY above-the-fold styles: header, hero basics.
+ * Keep this under 14KB for optimal performance.
+ */
+
+/* CSS Reset - Essential Only */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+
+/* Critical Variables */
+:root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-head: var(--font-sans);
+    --color-text: #080808;
+    --color-text-sec: #555;
+    --color-white: #fff;
+    --color-bordered: #ddd;
+    --color-primary: #C0392B;
+    --color-action: #1944a8;
+    --header-height: 65px;
+    --gutter: clamp(1rem, calc(17.39vw - 2.91rem), 5rem);
+    --fs-base: clamp(1.0625rem, calc(0.24vw + 1rem), 1.25rem);
+    --fs-s: clamp(0.9375rem, calc(0.08vw + 0.92rem), 1rem);
+    --fs-l: clamp(1.4rem, calc(0.26vw + 1.33rem), 1.6rem);
+    --fs-4xl: clamp(2.85rem, calc(2.1vw + 2.3rem), 4.5rem);
+    --space-s: clamp(0.75rem, calc(0.65vw + 0.65rem), 1.25rem);
+    --space-m: clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem);
+    --radius-s: 0.5rem;
+}
+
+/* Dark Mode Critical */
+[data-theme="dark"] {
+    --color-text: #f9fafb;
+    --color-text-sec: #9ca3af;
+    --color-white: #111827;
+    --color-bordered: #374151;
+}
+
+/* Body */
+body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-base);
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* Header - Critical Path */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-bordered);
+}
+
+[data-theme="dark"] .site-header {
+    background-color: rgba(17, 24, 39, 0.95);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-inline: var(--space-s);
+    max-width: 1366px;
+    margin-inline: auto;
+}
+
+.site-logo {
+    font-family: var(--font-head);
+    font-size: var(--fs-l);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/* Nav - Desktop Only */
+.primary-nav { display: none; }
+@media (min-width: 768px) {
+    .primary-nav {
+        display: flex;
+        align-items: center;
+        gap: var(--space-m);
+    }
+}
+
+.primary-nav__link {
+    font-size: var(--fs-s);
+    font-weight: 500;
+    color: var(--color-text-sec);
+    text-decoration: none;
+}
+
+/* Mobile Toggle */
+.mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-toggle { display: none; }
+}
+
+/* Hero - Critical Skeleton */
+.hero {
+    padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+.hero__title {
+    font-family: var(--font-head);
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+/* Container - Critical */
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    background: var(--color-text);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    left: 0;
+    top: 0;
+}
+
+/* Prevent FOUC */
+.no-js .mobile-menu { display: none; }
+
+/* Loading States */
+.skeleton {
+    background: linear-gradient(90deg, var(--color-bordered) 25%, transparent 50%, var(--color-bordered) 75%);
+    background-size: 200% 100%;
+    animation: skeleton 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
