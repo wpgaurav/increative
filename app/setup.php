@@ -58,6 +58,55 @@ add_filter('theme_file_path', function ($path, $file) {
 }, 10, 2);
 
 /**
+ * Conditionally enqueue component CSS based on page type.
+ * This reduces unused CSS by loading styles only when needed.
+ *
+ * @return void
+ */
+add_action('wp_enqueue_scripts', function () {
+    // Single post styles
+    if (is_singular('post')) {
+        wp_enqueue_style(
+            'increative-single',
+            Vite::asset('resources/css/components/single.css'),
+            [],
+            null
+        );
+    }
+    
+    // Hero styles - for front page and pages with hero template
+    if (is_front_page() || is_page_template('template-home.blade.php')) {
+        wp_enqueue_style(
+            'increative-hero',
+            Vite::asset('resources/css/components/hero.css'),
+            [],
+            null
+        );
+    }
+    
+    // Mega menu styles - always load if menu has mega-menu class items
+    // Can be made conditional based on menu inspection if needed
+    if (has_nav_menu('primary_navigation')) {
+        wp_enqueue_style(
+            'increative-mega-menu',
+            Vite::asset('resources/css/components/mega-menu.css'),
+            [],
+            null
+        );
+    }
+    
+    // Form styles - for pages with forms
+    if (comments_open() || is_page_template(['template-contact.blade.php', 'template-landing.blade.php'])) {
+        wp_enqueue_style(
+            'increative-forms',
+            Vite::asset('resources/css/components/forms.css'),
+            [],
+            null
+        );
+    }
+}, 100);
+
+/**
  * Register the initial theme setup.
  *
  * @return void
@@ -77,6 +126,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'footer_navigation' => __('Footer Navigation', 'sage'),
     ]);
 
     /**
@@ -128,6 +178,16 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+    
+    /**
+     * Add support for editor styles.
+     */
+    add_theme_support('editor-styles');
+    
+    /**
+     * Add support for wide and full alignments.
+     */
+    add_theme_support('align-wide');
 }, 20);
 
 /**

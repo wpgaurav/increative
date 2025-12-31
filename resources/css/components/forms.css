@@ -1,0 +1,116 @@
+/* ============================================
+   NEWSLETTER STYLES
+   Only loaded on pages with newsletter forms
+   ============================================ */
+
+.newsletter {
+    padding: var(--space-l);
+    background-color: var(--color-almond);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.newsletter--highlight {
+    background-color: var(--color-bg-highlight);
+    color: var(--color-white);
+}
+
+.newsletter--highlight .newsletter__description {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter__title {
+    font-size: var(--fs-2xl);
+    margin-bottom: var(--space-xs);
+}
+
+.newsletter__description {
+    font-size: var(--fs-base);
+    color: var(--color-text-sec);
+    margin-bottom: var(--space-m);
+}
+
+.newsletter__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .newsletter__form {
+        flex-direction: row;
+    }
+}
+
+.newsletter__input {
+    flex: 1;
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-base);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-s);
+    background-color: var(--color-white);
+}
+
+.newsletter__input:focus {
+    outline: none;
+    border-color: var(--color-action);
+}
+
+.newsletter--highlight .newsletter__input {
+    border-color: transparent;
+}
+
+/* ============================================
+   FORM STYLES
+   Only loaded on pages with forms
+   ============================================ */
+
+.form-group {
+    margin-bottom: var(--space-m);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--fs-s);
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-base);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-s);
+    background-color: var(--color-white);
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-action);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-hint {
+    font-size: var(--fs-xs);
+    color: var(--color-text-sec);
+    margin-top: var(--space-xs);
+}
+
+.form-error {
+    font-size: var(--fs-xs);
+    color: var(--color-primary);
+    margin-top: var(--space-xs);
+}

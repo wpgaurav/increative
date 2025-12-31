@@ -1,13 +1,16 @@
 /*
-Theme Name:         Sage Starter Theme
-Theme URI:          https://roots.io/sage/
-Description:        Sage is a WordPress starter theme.
-Version:            11.0.1
-Author:             Roots
-Author URI:         https://roots.io/
+Theme Name:         Increative
+Theme URI:          https://gauravtiwari.org/themes/increative/
+Description:        A modern, clean WordPress theme built with Sage 11, Tailwind CSS, and Laravel Blade. Perfect for blogs, landing pages, and professional websites.
+Version:            1.0.0
+Author:             Gaurav Tiwari
+Author URI:         https://gauravtiwari.org/
 Text Domain:        sage
 License:            MIT License
 License URI:        https://opensource.org/licenses/MIT
 Requires PHP:       8.2
 Requires at least:  6.6
+Tested up to:       6.7
+
+Tags: blog, one-column, two-columns, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-site-editing, block-patterns, block-styles, wide-blocks
 */

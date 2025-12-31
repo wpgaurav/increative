@@ -1,0 +1,123 @@
+/* ============================================
+   HERO SECTION STYLES
+   Only loaded on pages with hero sections
+   ============================================ */
+
+.hero {
+    padding-block: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-block: var(--space-2xl);
+    }
+}
+
+.hero__content {
+    max-width: var(--content);
+}
+
+.hero__tagline {
+    display: inline-block;
+    font-size: var(--fs-s);
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--space-s);
+}
+
+.hero__title {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-m);
+}
+
+@media (min-width: 768px) {
+    .hero__title {
+        font-size: var(--fs-4xl);
+    }
+}
+
+.hero__description {
+    font-size: var(--fs-m);
+    color: var(--color-text-sec);
+    line-height: 1.7;
+    margin-bottom: var(--space-l);
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+}
+
+.hero__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    margin-top: var(--space-l);
+    padding-top: var(--space-l);
+    border-top: 1px solid var(--color-bordered);
+}
+
+.hero__author-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.hero__author-info {
+    font-size: var(--fs-s);
+}
+
+.hero__author-name {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.hero__author-role {
+    color: var(--color-text-sec);
+}
+
+/* ============================================
+   SERVICE CARDS
+   Only loaded on pages with services
+   ============================================ */
+
+.service-card {
+    padding: var(--card-space);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-bordered);
+    border-radius: var(--radius-l);
+    transition: all var(--transition-duration);
+}
+
+.service-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--smallshadow);
+}
+
+.service-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-almond);
+    border-radius: var(--radius-m);
+    margin-bottom: var(--space-s);
+    color: var(--color-primary);
+}
+
+.service-card__title {
+    font-size: var(--fs-m);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.service-card__description {
+    font-size: var(--fs-s);
+    color: var(--color-text-sec);
+    line-height: 1.6;
+}

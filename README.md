@@ -1,31 +1,226 @@
-<p align="center">
-  <a href="https://roots.io/sage/"><img alt="Sage" src="https://cdn.roots.io/app/uploads/logo-sage.svg" height="100"></a>
-</p>
+# Increative Theme
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/sage"><img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/sage?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
-  <a href="https://github.com/roots/sage/actions/workflows/main.yml"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/sage/main.yml?branch=main&logo=github&label=CI&style=flat-square"></a>
-  <a href="https://bsky.app/profile/roots.dev"><img alt="Follow roots.dev on Bluesky" src="https://img.shields.io/badge/follow-@roots.dev-0085ff?logo=bluesky&style=flat-square"></a>
-</p>
+A modern, clean WordPress theme built with **Sage 11**, **Tailwind CSS 4**, and **Laravel Blade**. Perfect for blogs, landing pages, and professional websites.
 
-# Sage
+Inspired by [gauravtiwari.org](https://gauravtiwari.org).
 
-**Advanced hybrid WordPress starter theme with Laravel Blade and Tailwind CSS**
+---
 
-- 🔧 Clean, efficient theme templating with Laravel Blade
-- ⚡️ Modern front-end development workflow powered by Vite
-- 🎨 Out of the box support for Tailwind CSS
-- 🚀 Harness the power of Laravel with [Acorn integration](https://github.com/roots/acorn)
-- 📦 Block editor support built-in
+## ✨ Features
 
-Sage brings proper PHP templating and modern JavaScript tooling to WordPress themes. Write organized, component-based code using Laravel Blade, enjoy instant builds and CSS hot-reloading with Vite, and leverage Laravel's robust feature set through Acorn.
+- **Modern Stack**: Sage 11, Tailwind CSS 4, Vite, Laravel Blade
+- **System Fonts**: Uses native system fonts for optimal performance (with custom Google Fonts option)
+- **Dark Mode**: Built-in dark mode toggle with system preference detection
+- **Responsive Design**: Mobile-first approach with clean, professional layouts
+- **Fast Performance**: Optimized CSS and JavaScript, lazy loading, minimal footprint
+- **Block Editor Ready**: Full Gutenberg compatibility with custom editor styles
+- **Customizer Options**: Typography, social links, header/footer settings, blog options
+- **Professional Templates**: Homepage, blog archive, single post, pages, 404
+- **Developer Friendly**: PSR-4 autoloading, View Composers, Blade components
 
-[Read the docs to get started](https://roots.io/sage/docs/installation/)
+---
 
-## Sponsors
+## 🚀 Quick Start
 
-Sage is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, [please consider sponsoring us](https://github.com/sponsors/roots).
+### Requirements
 
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://40q.agency/"><img src="https://cdn.roots.io/app/uploads/40q.svg" alt="40Q" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a>
+- PHP 8.2+
+- WordPress 6.6+
+- Node.js 20+
+- Composer 2+
+
+### Installation
+
+```bash
+# Navigate to themes directory
+cd wp-content/themes/increative
+
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+npm install
+
+# Build for production
+npm run build
+
+# Or start development server with HMR
+npm run dev
+```
+
+### Activate Theme
+
+1. Go to **Appearance → Themes** in WordPress admin
+2. Activate "Increative"
+3. Configure options in **Customize → Increative Theme Options**
+
+---
+
+## 📁 Theme Structure
+
+```
+increative/
+├── app/                    # PHP application files
+│   ├── Providers/          # Service providers
+│   ├── View/
+│   │   ├── Composers/      # View composers
+│   │   └── Walkers/        # Navigation walkers
+│   ├── customizer.php      # Theme customizer settings
+│   ├── filters.php         # WordPress filters
+│   └── setup.php           # Theme setup
+├── resources/
+│   ├── css/
+│   │   ├── app.css         # Main frontend styles
+│   │   └── editor.css      # Block editor styles
+│   ├── js/
+│   │   ├── app.js          # Main JavaScript
+│   │   └── editor.js       # Block editor scripts
+│   ├── views/
+│   │   ├── layouts/        # Base layouts
+│   │   ├── sections/       # Header, footer
+│   │   ├── partials/       # Content templates
+│   │   └── components/     # Blade components
+│   ├── fonts/              # Custom fonts
+│   └── images/             # Theme images
+├── public/build/           # Compiled assets
+├── theme.json              # Block editor configuration
+├── vite.config.js          # Vite configuration
+└── functions.php           # Theme bootstrap
+```
+
+---
+
+## 🎨 Customization
+
+### Theme Options
+
+Access via **Appearance → Customize → Increative Theme Options**:
+
+| Section | Options |
+|---------|---------|
+| **Typography** | Custom Google Font, font weights |
+| **Social Links** | Twitter, LinkedIn, GitHub, YouTube, Instagram, Facebook |
+| **Header** | Sticky header, dark mode toggle |
+| **Footer** | Custom copyright, newsletter toggle |
+| **Blog** | Posts per row, reading time, author box, related posts |
+
+### Custom Fonts
+
+1. Go to **Customize → Increative Theme Options → Typography**
+2. Enter a Google Font name (e.g., "Inter", "Outfit", "Roboto")
+3. Optionally specify font weights (default: 400;500;600;700)
+
+### Colors
+
+Edit the CSS variables in `resources/css/app.css`:
+
+```css
+@theme {
+  --color-text: #1a1a1a;
+  --color-accent: #2563eb;
+  --color-bg: #ffffff;
+  /* ... */
+}
+```
+
+---
+
+## 🔧 Development
+
+### Commands
+
+```bash
+# Start dev server with HMR
+npm run dev
+
+# Build for production
+npm run build
+
+# Generate translations
+npm run translate
+```
+
+### Creating Templates
+
+Add new Blade templates in `resources/views/`:
+
+```blade
+{{-- resources/views/template-custom.blade.php --}}
+{{--
+  Template Name: My Custom Template
+--}}
+
+@extends('layouts.app')
+
+@section('content')
+  {{-- Your content --}}
+@endsection
+```
+
+### Creating Components
+
+Add Blade components in `resources/views/components/`:
+
+```blade
+{{-- resources/views/components/my-component.blade.php --}}
+@props(['title'])
+
+<div {{ $attributes->class(['my-component']) }}>
+  <h3>{{ $title }}</h3>
+  {{ $slot }}
 </div>
+```
+
+Use with: `<x-my-component title="Hello">Content</x-my-component>`
+
+---
+
+## 📝 Template Hierarchy
+
+| Template | Purpose |
+|----------|---------|
+| `template-home.blade.php` | Homepage with hero, services, posts |
+| `index.blade.php` | Blog archive |
+| `single.blade.php` | Single post |
+| `page.blade.php` | Standard page |
+| `404.blade.php` | Error page |
+| `search.blade.php` | Search results |
+
+---
+
+## 🧱 Blade Components
+
+Available components:
+
+- `<x-alert type="info|success|warning|error">` - Alert messages
+- `<x-button variant="primary|secondary|ghost">` - Buttons
+- `<x-card :post="$post">` - Post cards
+
+---
+
+## 📦 Dependencies
+
+### PHP (Composer)
+- roots/acorn
+- log1x/sage-directives (optional)
+
+### JavaScript (npm)
+- tailwindcss ^4.0.9
+- vite ^6.2.0
+- laravel-vite-plugin
+- @roots/vite-plugin
+- @tailwindcss/vite
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE.md](LICENSE.md)
+
+---
+
+## 🙏 Credits
+
+- [Roots Team](https://roots.io) for Sage
+- [Adam Wathan](https://adamwathan.me) for Tailwind CSS
+- Inspired by [gauravtiwari.org](https://gauravtiwari.org)

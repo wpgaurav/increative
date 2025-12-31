@@ -1,37 +1,385 @@
 {
-  "__preprocessed__": "This file is used to build the theme.json file in the `public/build/assets` directory. The built artifact includes Tailwind's colors, fonts, and font sizes.",
+  "__preprocessed__": "This file is used to build the theme.json file in the `public/build/assets` directory.",
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
   "settings": {
+    "appearanceTools": true,
     "layout": {
-      "contentSize": "48rem"
+      "contentSize": "850px",
+      "wideSize": "1024px"
     },
     "background": {
-      "backgroundImage": true
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
     },
     "color": {
-      "custom": false,
+      "custom": true,
       "customDuotone": false,
-      "customGradient": false,
+      "customGradient": true,
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,
-      "duotone": []
+      "duotone": [],
+      "palette": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#C0392B"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#262A5D"
+        },
+        {
+          "name": "Tertiary",
+          "slug": "tertiary",
+          "color": "#001e12"
+        },
+        {
+          "name": "Action",
+          "slug": "action",
+          "color": "#1944a8"
+        },
+        {
+          "name": "Accent",
+          "slug": "accent",
+          "color": "#F7B500"
+        },
+        {
+          "name": "Accent New",
+          "slug": "accent-new",
+          "color": "#ffd700"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Text Secondary",
+          "slug": "text-sec",
+          "color": "#555555"
+        },
+        {
+          "name": "Button Secondary",
+          "slug": "button-sec",
+          "color": "#001947"
+        },
+        {
+          "name": "Almond",
+          "slug": "almond",
+          "color": "#fcf9f5"
+        },
+        {
+          "name": "Bodified",
+          "slug": "bodified",
+          "color": "#faf8f6"
+        },
+        {
+          "name": "BlueAlice",
+          "slug": "aliceblue",
+          "color": "#f0f8ff"
+        },
+        {
+          "name": "Peach",
+          "slug": "peach",
+          "color": "#ffdab9"
+        },
+        {
+          "name": "Thistle",
+          "slug": "thistle",
+          "color": "#d8bfd8"
+        },
+        {
+          "name": "Yellow Green",
+          "slug": "yellow-green",
+          "color": "#9acd32"
+        },
+        {
+          "name": "Bordered",
+          "slug": "bordered",
+          "color": "#dddddd"
+        },
+        {
+          "name": "BG Highlight",
+          "slug": "bg-highlight",
+          "color": "#111827"
+        },
+        {
+          "name": "Off White",
+          "slug": "offwhite",
+          "color": "#F6F6F6"
+        },
+        {
+          "name": "Subtle Green",
+          "slug": "subtle-green",
+          "color": "#117c68"
+        },
+        {
+          "name": "Green Card",
+          "slug": "green-card",
+          "color": "#f1fdf8"
+        },
+        {
+          "name": "Orange Card",
+          "slug": "orange-card",
+          "color": "#fef1f0"
+        },
+        {
+          "name": "Red Card",
+          "slug": "red-card",
+          "color": "#ffe7e7"
+        },
+        {
+          "name": "My Yellow",
+          "slug": "my-yellow",
+          "color": "#ffd700"
+        },
+        {
+          "name": "Latest Green",
+          "slug": "latest-green",
+          "color": "#6fa11e"
+        },
+        {
+          "name": "Shade Yellow",
+          "slug": "shade-yellow",
+          "color": "#ffdf88"
+        },
+        {
+          "name": "Latest Red",
+          "slug": "latest-red",
+          "color": "#c0392b"
+        },
+        {
+          "name": "TextShade",
+          "slug": "textshade",
+          "color": "#080808"
+        },
+        {
+          "name": "Blue",
+          "slug": "blue",
+          "color": "#3533cd"
+        }
+      ]
     },
     "custom": {
-      "spacing": {},
+      "layout": {
+        "content": "850px",
+        "wide": "1024px",
+        "max": "1366px",
+        "widemax": "1600px"
+      },
+      "spacing": {
+        "xs": "clamp(0.8125rem, calc(0vw + 0.8125rem), 0.8125rem)",
+        "s": "clamp(0.75rem, calc(0.65vw + 0.65rem), 1.25rem)",
+        "m": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)",
+        "l": "clamp(1.5rem, calc(1.8vw + 1rem), 2.5rem)",
+        "xl": "clamp(1.75rem, calc(3vw + 1rem), 3.5rem)",
+        "2xl": "clamp(2rem, calc(4.5vw + 1.1rem), 5rem)"
+      },
       "typography": {
-        "font-size": {},
-        "line-height": {}
+        "line-height": {
+          "tight": "1.25",
+          "normal": "1.6",
+          "relaxed": "1.8"
+        }
       }
     },
     "spacing": {
       "padding": true,
-      "units": ["px", "%", "em", "rem", "vw", "vh"]
+      "margin": true,
+      "blockGap": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
     },
     "typography": {
       "defaultFontSizes": false,
-      "customFontSize": false
+      "customFontSize": true,
+      "lineHeight": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, 'Google Sans', ui-sans-serif, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+          "slug": "system-sans",
+          "name": "System Sans"
+        },
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Google Sans', ui-sans-serif, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+          "slug": "system-head",
+          "name": "System Headings"
+        },
+        {
+          "fontFamily": "Iowan Old Style, Apple Garamond, Baskerville, serif",
+          "slug": "system-serif",
+          "name": "System Serif"
+        },
+        {
+          "fontFamily": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+          "slug": "system-mono",
+          "name": "System Mono"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "xs",
+          "size": "clamp(0.8125rem, calc(0vw + 0.8125rem), 0.8125rem)",
+          "name": "Extra Small"
+        },
+        {
+          "slug": "small",
+          "size": "clamp(0.9375rem, calc(0.08vw + 0.92rem), 1rem)",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "clamp(1.0625rem, calc(0.24vw + 1rem), 1.25rem)",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "clamp(1.4rem, calc(0.26vw + 1.33rem), 1.6rem)",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "clamp(1.6rem, calc(0.5vw + 1.47rem), 2rem)",
+          "name": "Extra Large"
+        },
+        {
+          "slug": "xx-large",
+          "size": "clamp(1.85rem, calc(0.83vw + 1.63rem), 2.5rem)",
+          "name": "2X Large"
+        },
+        {
+          "slug": "huge",
+          "size": "clamp(2.35rem, calc(1.15vw + 2.05rem), 3.25rem)",
+          "name": "Huge"
+        },
+        {
+          "slug": "gigantic",
+          "size": "clamp(2.85rem, calc(2.1vw + 2.3rem), 4.5rem)",
+          "name": "Gigantic"
+        }
+      ]
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": true
+        }
+      },
+      "core/pullquote": {
+        "border": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--preset--color--textshade)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "fontSize": "var(--wp--preset--font-size--medium)",
+      "lineHeight": "1.6"
+    },
+    "spacing": {
+      "blockGap": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--action)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--primary)"
+          }
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-head)",
+          "fontWeight": "700",
+          "lineHeight": "1.25"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--textshade)"
+        }
+      },
+      "button": {
+        "border": {
+          "radius": "clamp(0.38rem, calc(-0.19vw + 0.54rem), 0.5rem)"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "var(--wp--preset--color--white)"
+        },
+        "typography": {
+          "fontWeight": "600"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--secondary)"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/code": {
+        "color": {
+          "background": "var(--wp--preset--color--bg-highlight)",
+          "text": "#e2e8f0"
+        },
+        "border": {
+          "radius": "clamp(0.63rem, calc(-0.19vw + 0.79rem), 0.75rem)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)",
+            "right": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)",
+            "bottom": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)",
+            "left": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)"
+          }
+        }
+      },
+      "core/quote": {
+        "color": {
+          "background": "var(--wp--preset--color--almond)"
+        },
+        "border": {
+          "color": "var(--wp--preset--color--primary)",
+          "style": "solid",
+          "width": "0 0 0 4px"
+        },
+        "spacing": {
+          "padding": {
+            "left": "clamp(1.25rem, calc(1.2vw + 0.85rem), 2rem)"
+          }
+        }
+      },
+      "core/separator": {
+        "color": {
+          "background": "var(--wp--preset--color--bordered)"
+        }
+      }
     }
   }
 }
