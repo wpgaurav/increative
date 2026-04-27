@@ -1,6 +1,7 @@
 <?php
 
 use Roots\Acorn\Application;
+use Roots\Acorn\Support\Providers\ServiceProvider;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +32,15 @@ require $composer;
 |
 */
 
-Application::configure()
-    ->withProviders([
-        App\Providers\ThemeServiceProvider::class,
-    ])
+Application::configure(get_theme_file_path())
+    ->withConfig(get_theme_file_path('config'))
+    ->withProviders(
+        ServiceProvider::defaultProviders()
+            ->merge([
+                App\Providers\ThemeServiceProvider::class,
+            ])
+            ->toArray()
+    )
     ->boot();
 
 /*
